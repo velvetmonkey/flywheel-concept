@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+.env.*
+.mcp.json
+api-keys.json
+credentials.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Coverage
+coverage/
+
+# Method-local caches (embeddings, activations, etc.)
+benchmark/methods/*/.cache/
+benchmark/methods/*/cache/
