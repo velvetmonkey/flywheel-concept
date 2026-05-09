@@ -65,14 +65,15 @@ The Qwen-Coder run is a **cross-distribution stress holdout**, not an independen
 
 ## How this slots in
 
-Flywheel Concept is one of four sibling research and product threads:
-
-- **[Flywheel Memory](https://github.com/velvetmonkey/flywheel-memory)** — local-first AI memory layer for Obsidian. Grounded retrieval, safe writes, knowledge-graph engine. Production.
-- **[Flywheel Ideas](https://github.com/velvetmonkey/flywheel-ideas)** — local-first falsifiable decision ledger. The pre-registration target for Concept's bridge claim.
-- **[Flywheel Geometry](https://github.com/velvetmonkey/flywheel-geometry)** — geodesic retrieval extension. The instrument-calibration lab; the discipline Concept inherits.
-- **Flywheel Concept** *(this repo)* — research programme on whether language models reveal structured concept geometry.
-
 Concept is umbrella to Geometry's research lane. Geometry's adversarial-screen discipline produced the falsified probe that motivated Concept. Concept does not replace Geometry; it is what Geometry's empirical floor was pointing at.
+
+## The Flywheel Suite
+
+- **[flywheel-memory](https://github.com/velvetmonkey/flywheel-memory)** — local-first MCP server. Hybrid BM25 + semantic search, knowledge graph, safe writes over an Obsidian vault.
+- **[flywheel-crank](https://github.com/velvetmonkey/flywheel-crank)** — Obsidian plugin. Visual layer over Memory's graph: sidebar, vault health, semantic search UI.
+- **[flywheel-ideas](https://github.com/velvetmonkey/flywheel-ideas)** — falsifiable decision ledger. Pre-registered assumptions, multi-model AI council dissent, outcome-driven refutation propagation.
+- **[flywheel-geometry](https://github.com/velvetmonkey/flywheel-geometry)** — geodesic retrieval extension. Pre-registered study of cross-domain bridge-finding via activation manifolds.
+- **flywheel-concept** *(this repo)* — research programme on whether cross-model activations reveal structured concept geometry.
 
 ---
 
