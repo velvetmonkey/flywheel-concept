@@ -1,8 +1,10 @@
 <div align="center">
   <img src="header.png" alt="Flywheel" width="256"/>
   <h1>Flywheel Concept</h1>
-  <p><strong>Pre-registered cross-model latent alignment as a falsifiable research programme on whether neural networks reveal structured concept geometry — or shared training-corpus artefact.</strong></p>
+  <p><strong>A falsifiable study of whether cross-model activations reveal structured concept geometry — or shared training-corpus artefact.</strong></p>
 </div>
+
+> **Status: draft pre-registration. No pilot run yet.** Protocol lives at [`docs/pre-registration.md`](./docs/pre-registration.md) and freezes at a tagged commit before the pilot runs.
 
 A telescope's value is judged by what it reveals about stars, not by what it tells you about itself. Neural networks reveal traces — activations, behaviours, distances. The science is measuring which traces faithfully reveal latent concept structure, and which are artefacts of the instrument.
 
@@ -20,30 +22,32 @@ The work is vault-first and pre-pilot. When the pilot ships, numbers will be pub
 
 Concept commits, before any experiment runs, to a single bridge claim:
 
-> **Pre-registered cross-model latent alignment under structural transforms predicts task transfer ≥ ΔR² 0.10, bootstrap 95% CI excluding 0, holds on ≥2 of 3 concept-heavy domains AND on the code-heavy holdout model.**
+> **Pre-registered cross-model latent alignment under structural transforms predicts task transfer with incremental coefficient of determination ΔR² ≥ 0.10, bootstrap 95% CI excluding 0, holding on ≥2 of 3 task domains AND on the code-heavy holdout model.**
 
-**Tasks** (three concept-heavy domains, all literature-grounded):
+Full metric definitions, bootstrap procedure, and unit-of-analysis discussion live in [`benchmark/metrics.md`](./benchmark/metrics.md). Protocol freeze rules in [`docs/pre-registration.md`](./docs/pre-registration.md).
 
-- BATS analogies (Gladkova et al. 2016) — relational pattern transfer.
-- WordNet taxonomic distance — hierarchical concept structure.
-- Color-circumplex ordering — perceptual concept geometry, the canonical curved-manifold case.
+**Tasks** (three relational-structure domains, all literature-grounded — full scope in [`benchmark/tasks.md`](./benchmark/tasks.md)):
 
-**Models** (five, ≥2 architecture families, ≥2 training corpora):
+- **BATS semantic subsets** (Gladkova et al. 2016) — relational linguistic structure. Lexicographic + encyclopedic subsets only; inflectional and derivational morphology subsets excluded as token-level rather than concept-level.
+- **WordNet taxonomic distance** — hierarchical concept structure.
+- **Color-circumplex ordering** — perceptual concept geometry, the canonical curved-manifold case.
 
-- Llama-3-70B (Meta, RedPajama-flavoured corpus)
-- Claude-via-NLA (Anthropic, proprietary corpus)
-- Pythia-12B (EleutherAI, the Pile)
-- Qwen-Coder (Alibaba, code-heavy corpus) — the cross-data null
-- Mistral-7B (Mistral, mixed corpus)
+**Models** (five open-weight models, ≥2 model families, ≥2 training distributions — full table in [`benchmark/models.md`](./benchmark/models.md)):
 
-The Qwen-Coder holdout is load-bearing. If cross-model agreement is corpus-explained, Qwen-Coder fails to align even though it is a competent model. That is the falsifier — cross-architecture similarity alone is not the claim; cross-data-distribution similarity is.
+- Llama 3.1 8B (Meta, RedPajama-style corpus)
+- Gemma 2 9B (Google, proprietary public-corpus mix)
+- Pythia 12B (EleutherAI, the Pile)
+- Qwen 2.5 Coder 7B (Alibaba, code-heavy corpus) — cross-distribution stress test
+- Mistral 7B (Mistral, mixed corpus)
+
+The Qwen-Coder run is a **cross-distribution stress holdout**, not an independently decisive falsifier. A code-heavy model still has substantial natural-language pretraining (documentation, comments, package names, tutorials), so alignment success does not prove cross-corpus concept geometry, and alignment failure does not prove the effect is corpus artefact (could be tokenization, scale, post-training, layer choice, or task mismatch). Outcome is diagnostic and feeds the interpretation; it is not on its own the gate.
 
 **Baselines** (two, both literature-grounded):
 
-- **B1 — Raw linear probe per model**: per-model linear/MLP probe on residual stream. The artefact-y baseline Concept claims to beat.
-- **B2 — Cross-model linear probe transfer**: train probe on model A, evaluate on model B's activations after best-fit linear map. Literature-grounded (Conneau et al. cross-lingual transfer; Bansal et al. model stitching).
+- **B1 — Raw per-model probe**: per-model linear/MLP probe on residual stream. The artefact-y baseline Concept claims to beat.
+- **B2 — Cross-model linear probe transfer**: train probe on model A, evaluate on model B's activations after a best-fit linear map. Literature-grounded (Conneau et al. cross-lingual transfer; Bansal et al. model stitching).
 
-**Decision rule**: ΔR² ≥ 0.10, bootstrap 95% CI (BCa, 1000 resamples) excluding 0, holds on ≥2 of 3 domains AND on the Qwen-Coder cross-data holdout. Any post-hoc parameter selection or task-set change is automatic refutation. Pre-registration in [Flywheel Ideas](https://github.com/velvetmonkey/flywheel-ideas) lands when the pilot design freezes.
+**Decision rule** (precise version in [`benchmark/metrics.md`](./benchmark/metrics.md)): ΔR² ≥ 0.10 over both B1 and B2, bootstrap 95% CI (BCa, 1000 resamples, clustered by concept-item / relation-group / model-pair) excluding 0, on ≥2 of 3 domains AND on the Qwen-Coder cross-distribution holdout. Any post-hoc parameter selection or task-set change after the protocol-freeze tag is automatic refutation. Pre-registration in [Flywheel Ideas](https://github.com/velvetmonkey/flywheel-ideas) lands when the protocol freezes.
 
 **If the bridge claim fails to beat both baselines on the agreed criteria, the negative result is the launch artifact.**
 
@@ -51,7 +55,7 @@ The Qwen-Coder holdout is load-bearing. If cross-model agreement is corpus-expla
 
 ## What this is not
 
-- Not a Kaggle leaderboard. The bridge claim is operationalised through task-transfer prediction; the predicate is latent alignment, not benchmark scores.
+- Not a leaderboard. The benchmark exists only to falsify the bridge claim. There is no ranking of models by score.
 - Not the Universal Semantic Coordinate System. USCS is held in [docs/philosophy.md](./docs/philosophy.md) as the upper bound this work could become; the bridge claim is the necessary condition, not the conclusion.
 - Not a finance product. No finance-domain experiments before the method is proven on cyclic time, scalar order, and concept-heavy taxonomies.
 - Not a cosmological claim about reality. The cosmological reading lives in [docs/philosophy.md](./docs/philosophy.md), owned and linked, not on this front door.
@@ -74,9 +78,22 @@ Concept is umbrella to Geometry's research lane. Geometry's adversarial-screen d
 
 ## Status
 
-Pre-v0. Vault-first. No pilot has run. No baseline numbers are published. No claim of result is made. This README and the linked philosophy document are the only surface area.
+**Draft pre-registration. No pilot run yet.** This repo holds:
 
-Concept follows [Flywheel Geometry](https://github.com/velvetmonkey/flywheel-geometry) — Geometry's pilot lands first, Concept's design freezes after, pre-registration in Flywheel Ideas at design freeze.
+- The bridge claim, the task list, the model list, the baseline list, and the decision rule (above).
+- The frozen protocol document at [`docs/pre-registration.md`](./docs/pre-registration.md). Currently `DRAFT` — moves to `FROZEN` at a tagged commit when the user signs off.
+- The evidence record at [`evidence/cheap-probe-360/`](./evidence/cheap-probe-360/) — the failed introspective-probe sweep that motivated this programme. Mirrored from [`flywheel-geometry`](https://github.com/velvetmonkey/flywheel-geometry).
+- No baseline numbers, no pilot results, no claim of empirical outcome.
+
+Concept follows [Flywheel Geometry](https://github.com/velvetmonkey/flywheel-geometry) — Geometry's pilot lands first, Concept's protocol freezes after, pre-registration in Flywheel Ideas at protocol freeze.
+
+---
+
+## Evidence
+
+The programme stands on one piece of preserved evidence at [`evidence/cheap-probe-360/`](./evidence/cheap-probe-360/): the 360-call adversarial sweep on @slashreboot's introspective coordinate elicitation probe (12 concepts × 6 prompt variants × 5 runs, against `claude-sonnet-4-6`, 2026-05-08). Pre-registered Spearman rank-correlation pass criterion `ρ > 0.5` between core and adversarial variants. **All four screens failed** (A: 0.078, B: 0.290, C: 0.159, E: 0.108). The pre-registered failure-signal trap (variant D, coherence-pressure framing) fired at ρ = 0.759 with 18× core's ground-truth pair separation. Two load-bearing assumptions in [Flywheel Ideas](https://github.com/velvetmonkey/flywheel-ideas) refuted: `asm-HvE9muhM` and `asm-VotY4n8g`, both parented to idea `idea-b4ZeRCoa`.
+
+The bridge claim above is the next assumption in that lineage. The chain itself is the work.
 
 ---
 

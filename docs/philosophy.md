@@ -40,7 +40,7 @@ Both assumptions were [Flywheel Ideas](https://github.com/velvetmonkey/flywheel-
 
 The numbers: variants A / B / C / E rank-correlated with the core at 0.078, 0.290, 0.159, 0.108. All below the 0.5 bar. Variant D (coherence-pressure framing) fired a different trap, producing an 18× separation on a core ground-truth pair — the model wrote a plausible new geometry on demand. Variant C produced 43 refusals out of 60.
 
-The probe did not fail by producing noise. It failed by producing **structured-looking output that was not stable under adversarial reframing**. The model was not introspecting activation geometry; it was constructing coordinates from learned narrative priors about how geometry is described in text. The chain-of-thought traces in Matthew's own Zenodo bundle confirmed it explicitly — models *consciously construct* coordinates from PAD circumplex and Russell-circumplex discourse priors, then emit them as if they were observations.
+The probe did not fail by producing noise. It failed by producing **structured-looking output that was not stable under adversarial reframing**. The traces are consistent with the model constructing coordinates from learned discourse priors about how geometry is described in text, rather than exposing activation geometry. The chain-of-thought traces in Matthew's own Zenodo bundle make this legible — the reasoning text describes constructing coordinates from PAD circumplex and Russell-circumplex framings before emitting them as if they were observations. (We make no claim about model cognition here; the traces are textual artefacts and we treat them as such.)
 
 The probe creates a believable geometry-shaped artefact. That is exactly the result interpretability people should care about.
 

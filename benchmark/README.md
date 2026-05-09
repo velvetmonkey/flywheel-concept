@@ -1,13 +1,23 @@
 # Telescope Fidelity Benchmark
 
-Placeholder. Lives here to reserve the directory and the convention.
+The benchmark exists only to falsify the bridge claim in the [top-level README](../README.md#how-well-know-this-works). It is not a leaderboard.
 
-When the pilot runs, this directory will hold:
+## Documents (draft)
 
-- The pre-registered task set (BATS analogies, WordNet taxonomic distance, color-circumplex ordering).
-- The model list and activation-extraction protocol.
-- The two literature-grounded baselines (B1: per-model linear probe; B2: cross-model linear probe transfer).
-- The decision rule (ΔR² ≥ 0.10, bootstrap 95% CI excluding 0, holds on ≥2 of 3 domains AND on the Qwen-Coder cross-data holdout).
-- The result file: `results-v0.1.json` — primary outcome and ablations.
+- [`models.md`](./models.md) — the five-model panel, with family / training distribution / activation-extraction notes.
+- [`tasks.md`](./tasks.md) — the three task domains, with subset rules (BATS semantic only) and ground-truth structures.
+- [`metrics.md`](./metrics.md) — the precise definition of ΔR², the bootstrap procedure, the unit of analysis, and the decision rule.
+- [`protocol.md`](./protocol.md) — the experimental protocol (activation extraction, layer choice, alignment fitting, task-transfer scoring, runtime plan).
 
-Submit your method via PR. Independent baselines welcome. The bridge claim is in [the README](../README.md#how-well-know-this-works).
+These four documents together constitute the draft pre-registration. The freeze rules and status banner live at [`../docs/pre-registration.md`](../docs/pre-registration.md).
+
+## When the pilot runs
+
+This directory will receive:
+
+- `results-v0.1/` — one results file per (model × task × baseline / method) cell.
+- `analysis-v0.1.json` — primary ΔR² values, bootstrap CIs, per-domain breakdowns.
+- `result.md` — interpretation, regardless of outcome (positive / null / refuted).
+
+Submit your method via PR. Independent baselines welcome. The bridge claim is the only thing being tested; the benchmark is the apparatus.
+

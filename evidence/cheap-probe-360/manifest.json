@@ -1,0 +1,65 @@
+{
+  "artifact": "cheap-probe-360",
+  "description": "Adversarial replication of @slashreboot's introspective coordinate elicitation probe. 12 concepts × 6 prompt variants × 5 runs = 360 calls against claude-sonnet-4-6. Pre-registered Spearman rank-correlation pass criterion.",
+  "run_date": "2026-05-08",
+  "model_under_test": "claude-sonnet-4-6",
+  "design": {
+    "concepts": 12,
+    "variants": 6,
+    "runs_per_cell": 5,
+    "total_calls_planned": 360,
+    "total_calls_parsed": 317,
+    "total_calls_refused": 43,
+    "variants_list": ["core", "A", "B", "C", "D", "E"]
+  },
+  "pass_criterion": "Spearman rank correlation rho > 0.5 between pair distances under core and each adversarial variant",
+  "outcome": "FAIL on all four adversarial screens (A/B/C/E); failure-signal trap (D) fired as designed",
+  "headline_results": {
+    "rank_correlation_vs_core": {
+      "A": 0.078,
+      "B": 0.290,
+      "C": 0.159,
+      "D": 0.759,
+      "E": 0.108
+    },
+    "ground_truth_pair_separation": {
+      "core": 0.271,
+      "D_coherence_pressure": 5.158,
+      "D_over_core_ratio": 19.03
+    },
+    "refusal_rate": {
+      "total": "43 / 360",
+      "concentrated_in": "variant C (inversion-framing)"
+    }
+  },
+  "refuted_assumptions": [
+    {
+      "id": "asm-HvE9muhM",
+      "statement": "Narrative-derived coordinates carry retrieval-useful relational structure under adversarial framing",
+      "parent_idea": "idea-b4ZeRCoa",
+      "refuted_at": "2026-05-08T16:12:38Z"
+    },
+    {
+      "id": "asm-VotY4n8g",
+      "statement": "Coordinate stability across runs is measurement-grade evidence of geometric structure",
+      "parent_idea": "idea-b4ZeRCoa",
+      "refuted_at": "2026-05-08T16:12:38Z"
+    }
+  ],
+  "files": {
+    "raw-claude-sonnet-2026-05-08.jsonl": "360-row primary sweep, one row per (concept, variant, run). Schema: {concept_id, concept_domain, variant, run, x, y, z, confidence, parse_error, wall_clock_seconds}.",
+    "raw-claude-haiku-2026-05-08.jsonl": "5-row partial. Claude Haiku 4.5 refused 5 / 5 core calls; preserved as a record of model-exploration journey before switching to Sonnet.",
+    "raw-claude-validation-2026-05-08.jsonl": "18-row validation batch (1 run × 2 variants × ~9 concepts) used to validate the run.py pipeline before the full sweep.",
+    "analysis-claude-sonnet-2026-05-08.json": "Computed analysis: per-variant stability (mean / max stdev), ground-truth pair distances and separation per variant, rank correlations vs core, pass/fail per pre-registered criterion.",
+    "concepts.jsonl": "12-concept set with cross-domain similar pairs, cross-domain different pairs, and unpaired stability anchors.",
+    "method-source.md": "Method document from the upstream repository at the run sha. Includes the 6 prompt-variant table, pass criteria, and interpretive lens."
+  },
+  "upstream_provenance": {
+    "repository": "https://github.com/velvetmonkey/flywheel-geometry",
+    "path": "benchmark/results/cheap-probe-claude-sonnet-2026-05-08.jsonl",
+    "sha_at_mirror": "e4c77d53e4a9482da04a116cba409bca35000a1d",
+    "mirror_date": "2026-05-09",
+    "mirror_rationale": "Concept stands on this evidence as part of its prior art. Mirroring (vs linking) ensures the artefact persists with this repository even if upstream history changes."
+  },
+  "license": "Apache-2.0 (inherited from this repository)"
+}
