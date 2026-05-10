@@ -4,7 +4,10 @@
   <p><strong>A falsifiable study of whether cross-model activations reveal structured concept geometry — or shared training-corpus artefact.</strong></p>
 </div>
 
-> **Status: draft pre-registration. No pilot run yet.** Protocol lives at [`docs/pre-registration.md`](./docs/pre-registration.md) and freezes at a tagged commit before the pilot runs.
+> **Status: v0.1 working draft post-Trial-2 (2026-05-10) — RESHAPE-NARROW active; repo freeze pending council pass.**
+> Sibling [`flywheel-geometry`](https://github.com/velvetmonkey/flywheel-geometry) Method 6 falsifier resolved **FAIL** on 2026-05-10 (full audit: [trial2-postmortem.md](https://github.com/velvetmonkey/flywheel-geometry/blob/main/docs/trial2-postmortem.md)). After two same-day turns on Concept's gate-spec, the active resolution is **RESHAPE-NARROW** (turn-2; supersedes turn-1 stay-the-course same-day). The active gate-spec is in the vault at `tech/flywheel/flywheel-concept-falsification-gate.md` (Resolution v2 section).
+>
+> The narrowed bridge claim, Bet 0 BM25 safety floor, three-control decision rule (B1 + B2 + C1 lexical/corpus-frequency, all simultaneously), and 6 structured concept families panel are not yet reflected in the body of this README or in [`docs/pre-registration.md`](./docs/pre-registration.md) — those updates ship at the `v0.1-prereg-frozen` freeze tag, after a council pass on the README and pre-registration doc rewrites. Until then, the body below describes the original v0.1-09 spec; the **active** spec is in the vault gate-spec linked above.
 
 A telescope's value is judged by what it reveals about stars, not by what it tells you about itself. Neural networks reveal traces — activations, behaviours, distances. The science is measuring which traces faithfully reveal latent concept structure, and which are artefacts of the instrument.
 

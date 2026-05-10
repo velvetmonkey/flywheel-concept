@@ -1,8 +1,8 @@
 # Pre-Registration
 
 ```
-Status:               DRAFT
-Frozen at commit:     <pending>
+Status:               DRAFT (post-Trial-2 turn-2 RESHAPE-NARROW pending freeze)
+Frozen at commit:     <pending — Surface 6c freeze>
 Frozen date:          <pending>
 Allowed changes:      typo fixes, broken-link fixes, clarifications
                       that do not change the empirical claim
@@ -10,6 +10,21 @@ Forbidden changes:    bridge-claim wording, decision rule, metric
                       definition, model panel, task list, baseline
                       definitions, bootstrap procedure
 ```
+
+> **Status update 2026-05-10.** Sibling [`flywheel-geometry`](https://github.com/velvetmonkey/flywheel-geometry) Method 6 falsifier resolved **FAIL** ([trial2-postmortem.md](https://github.com/velvetmonkey/flywheel-geometry/blob/main/docs/trial2-postmortem.md)). After two same-day turns on this gate-spec — turn-1 stay-the-course committed, then turn-2 RESHAPE-NARROW chosen after a second 3-CLI council surfaced sharper critique — the active resolution is **RESHAPE-NARROW**. The vault gate-spec at `tech/flywheel/flywheel-concept-falsification-gate.md` (Resolution v2 section) carries the active turn-2 spec:
+>
+> - **Narrowed bridge claim**: "Corpus-distinct model pairs preserve task-relevant relational topology only within pre-specified structured concept families, and only where that topology predicts transfer at ΔR² ≥ 0.10 beyond lexical, corpus-frequency, AND linear probe-transfer controls."
+> - **Bet 0 — Intra-model BM25 floor (preceding safety gate)**: each model's intra-model geometry must beat BM25 on the same task in each candidate concept family BEFORE cross-model alignment work runs for that family.
+> - **Bet 2 — Adversarial-paraphrase + nonce-label confound check** (under $200): rerun pilot with paraphrases that preserve relation graph but destroy lexical cues; if ΔR² collapses, kill the bet.
+> - **Three controls (must clear ALL simultaneously, not OR)**: B1 per-model probe + B2 cross-model linear probe transfer + C1 NEW lexical/corpus-frequency control.
+> - **Panel** (replaces original 3 domains): 6 structured concept families — kinship, taxonomic biology, geography containment, legal roles, programming type relations, mathematical objects.
+> - **Decision rule**: ΔR² ≥ 0.10 over ALL THREE controls in ≥ 4/6 families, with FDR-adjusted p < 0.05. Bootstrap CI excludes 0.
+>
+> The body of this document below describes the **original v0.1-09 (turn-1 / pre-Trial-2) spec**, retained verbatim as historical record. It will be replaced by the v2 spec at the `v0.1-prereg-frozen` freeze tag, after a Surface 6c council pass on the rewrite. Until that freeze: the active spec is the vault gate-spec linked above; this repo doc is informational, NOT yet the binding pre-registration artifact.
+
+---
+
+## Original v0.1-09 spec (preserved verbatim — historical record)
 
 ## What this document is
 
