@@ -17,7 +17,7 @@ A telescope's value is judged by what it reveals about stars, not by what it tel
 
 Flywheel Concept is a research programme. Not a product, not a benchmark, not a model evaluator, not a cosmology. Recent interpretability work — Goodfire AI's manifold-steering programme (Lubana et al., 2025–2026), the Platonic Representation Hypothesis (Huh et al., 2024), Hindupur–Lubana–Fel–Ba's *Projecting Assumptions* (NeurIPS 2025) — shows neural networks across architectures encode meaning on curved manifolds and converge on shared latent geometry without coordinated training. The question Concept addresses is the next one: *when is that convergence revealing real structure, and when is it shared training-corpus artefact?*
 
-The work is vault-first and pre-pilot. When the pilot ships, numbers will be published regardless of outcome.
+The work is vault-first and pre-[[pilot]]. When the pilot ships, numbers will be published regardless of outcome.
 
 ---
 
@@ -27,7 +27,7 @@ Concept commits, before any experiment runs, to a single bridge claim:
 
 > **Pre-registered cross-model latent alignment under structural transforms predicts task transfer with incremental coefficient of determination ΔR² ≥ 0.10, bootstrap 95% CI excluding 0, holding on ≥2 of 3 task domains AND on the code-heavy holdout model.**
 
-Full metric definitions, bootstrap procedure, and unit-of-analysis discussion live in [`benchmark/metrics.md`](./benchmark/metrics.md). Protocol freeze rules in [`docs/pre-registration.md`](./docs/pre-registration.md).
+Full metric definitions, bootstrap procedure, and unit-of-analysis discussion live in [`benchmark/metrics.md`](./benchmark/metrics.md). [[protocol]] freeze rules in [`docs/pre-registration.md`](./docs/pre-registration.md).
 
 **Tasks** (three relational-structure domains, all literature-grounded — full scope in [`benchmark/tasks.md`](./benchmark/tasks.md)):
 
@@ -121,6 +121,27 @@ Coauthorship on derivative academic work belongs upstream.
 The cosmological reading, the Universal Semantic Coordinate System reframe, and the four-piece suite headline are held in [docs/philosophy.md](./docs/philosophy.md). Owned, not hidden. Read it for the story so far. Read this README for what is being claimed and how it could be wrong.
 
 ---
+
+## Related repositories
+
+Part of the **Flywheel suite** — local-first knowledge infrastructure over a plain-markdown Obsidian vault:
+
+- [vault-core](https://github.com/velvetmonkey/vault-core) — Shared infrastructure for the Flywheel ecosystem.
+- [flywheel-memory](https://github.com/velvetmonkey/flywheel-memory) — Persistent knowledge-graph memory MCP server: semantic search, read, and write over your vault.
+- [flywheel-crank](https://github.com/velvetmonkey/flywheel-crank) — Desktop window into your vault's Flywheel MCP server.
+- [flywheel-gravity](https://github.com/velvetmonkey/flywheel-gravity) — A compressed, reality-filtered context field over a vault.
+- [flywheel-ideas](https://github.com/velvetmonkey/flywheel-ideas) — Local-first decision ledger: falsifiable bets, accepted outcomes, reusable lessons.
+- [mega-monkey](https://github.com/velvetmonkey/mega-monkey) — Telegram-native AI research cockpit over an Obsidian vault.
+- [roundtable](https://github.com/velvetmonkey/roundtable) — Local MCP server for delegating tasks to multiple AI models.
+
+Research and experiments:
+
+- **flywheel-concept** (this repo) — A falsifiable study of cross-model concept geometry.
+- [flywheel-geometry](https://github.com/velvetmonkey/flywheel-geometry) — A pre-registered study of cross-domain knowledge retrieval.
+- [flywheel-universe](https://github.com/velvetmonkey/flywheel-universe) — Lean 4 / Mathlib-verified core of the descent argument.
+- [flywheel-velvetgram](https://github.com/velvetmonkey/flywheel-velvetgram) — Local widescreen Telegram reader for long-form reading.
+
+Verified-cognition demo: [mcp-seal](https://github.com/velvetmonkey/mcp-seal) (verified MCP approval gate) and [canary](https://github.com/velvetmonkey/canary) (the seal demo host).
 
 ## License
 
