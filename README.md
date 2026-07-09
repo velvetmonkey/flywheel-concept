@@ -5,7 +5,7 @@
 </div>
 
 > **Status: v0.1 working draft post-Trial-2 (2026-05-10) — RESHAPE-NARROW active; repo freeze pending council pass.**
-> Sibling [`flywheel-geometry`](https://github.com/velvetmonkey/flywheel-geometry) Method 6 falsifier resolved **FAIL** on 2026-05-10 (full audit: [trial2-postmortem.md](https://github.com/velvetmonkey/flywheel-geometry/blob/main/docs/trial2-postmortem.md)). After two same-day turns on Concept's gate-spec, the active resolution is **RESHAPE-NARROW** (turn-2; supersedes turn-1 stay-the-course same-day). The active gate-spec is in the vault at `tech/flywheel/flywheel-concept-falsification-gate.md` (Resolution v2 section).
+> Sibling `flywheel-geometry` Method 6 falsifier resolved **FAIL** on 2026-05-10 (full audit: trial2-postmortem.md). After two same-day turns on Concept's gate-spec, the active resolution is **RESHAPE-NARROW** (turn-2; supersedes turn-1 stay-the-course same-day). The active gate-spec is in the vault at `tech/flywheel/flywheel-concept-falsification-gate.md` (Resolution v2 section).
 >
 > The narrowed bridge claim, Bet 0 BM25 safety floor, three-control decision rule (B1 + B2 + C1 lexical/corpus-frequency, all simultaneously), and 6 structured concept families panel are not yet reflected in the body of this README or in [`docs/pre-registration.md`](./docs/pre-registration.md) — those updates ship at the `v0.1-prereg-frozen` freeze tag, after a council pass on the README and pre-registration doc rewrites. Until then, the body below describes the original v0.1-09 spec; the **active** spec is in the vault gate-spec linked above.
 
@@ -50,7 +50,7 @@ The Qwen-Coder run is a **cross-distribution stress holdout**, not an independen
 - **B1 — Raw per-model probe**: per-model linear/MLP probe on residual stream. The artefact-y baseline Concept claims to beat.
 - **B2 — Cross-model linear probe transfer**: train probe on model A, evaluate on model B's activations after a best-fit linear map. Literature-grounded (Conneau et al. cross-lingual transfer; Bansal et al. model stitching).
 
-**Decision rule** (precise version in [`benchmark/metrics.md`](./benchmark/metrics.md)): ΔR² ≥ 0.10 over both B1 and B2, bootstrap 95% CI (BCa, 1000 resamples, clustered by concept-item / relation-group / model-pair) excluding 0, on ≥2 of 3 domains AND on the Qwen-Coder cross-distribution holdout. Any post-hoc parameter selection or task-set change after the protocol-freeze tag is automatic refutation. Pre-registration in [Flywheel Ideas](https://github.com/velvetmonkey/flywheel-ideas) lands when the protocol freezes.
+**Decision rule** (precise version in [`benchmark/metrics.md`](./benchmark/metrics.md)): ΔR² ≥ 0.10 over both B1 and B2, bootstrap 95% CI (BCa, 1000 resamples, clustered by concept-item / relation-group / model-pair) excluding 0, on ≥2 of 3 domains AND on the Qwen-Coder cross-distribution holdout. Any post-hoc parameter selection or task-set change after the protocol-freeze tag is automatic refutation. Pre-registration in Flywheel Ideas lands when the protocol freezes.
 
 **If the bridge claim fails to beat both baselines on the agreed criteria, the negative result is the launch artifact.**
 
@@ -72,10 +72,6 @@ Concept is umbrella to Geometry's research lane. Geometry's adversarial-screen d
 
 ## The Flywheel Suite
 
-- **[flywheel-memory](https://github.com/velvetmonkey/flywheel-memory)** — local-first MCP server. Hybrid BM25 + semantic search, knowledge graph, safe writes over an Obsidian vault.
-- **[flywheel-crank](https://github.com/velvetmonkey/flywheel-crank)** — Obsidian plugin. Visual layer over Memory's graph: sidebar, vault health, semantic search UI.
-- **[flywheel-ideas](https://github.com/velvetmonkey/flywheel-ideas)** — falsifiable decision ledger. Pre-registered assumptions, multi-model AI council dissent, outcome-driven refutation propagation.
-- **[flywheel-geometry](https://github.com/velvetmonkey/flywheel-geometry)** — geodesic retrieval extension. Pre-registered study of cross-domain bridge-finding via activation manifolds.
 - **flywheel-concept** *(this repo)* — research programme on whether cross-model activations reveal structured concept geometry.
 
 ---
@@ -86,16 +82,16 @@ Concept is umbrella to Geometry's research lane. Geometry's adversarial-screen d
 
 - The bridge claim, the task list, the model list, the baseline list, and the decision rule (above).
 - The frozen protocol document at [`docs/pre-registration.md`](./docs/pre-registration.md). Currently `DRAFT` — moves to `FROZEN` at a tagged commit when the user signs off.
-- The evidence record at [`evidence/cheap-probe-360/`](./evidence/cheap-probe-360/) — the failed introspective-probe sweep that motivated this programme. Mirrored from [`flywheel-geometry`](https://github.com/velvetmonkey/flywheel-geometry).
+- The evidence record at [`evidence/cheap-probe-360/`](./evidence/cheap-probe-360/) — the failed introspective-probe sweep that motivated this programme. Mirrored from `flywheel-geometry`.
 - No baseline numbers, no pilot results, no claim of empirical outcome.
 
-Concept follows [Flywheel Geometry](https://github.com/velvetmonkey/flywheel-geometry) — Geometry's pilot lands first, Concept's protocol freezes after, pre-registration in Flywheel Ideas at protocol freeze.
+Concept follows Flywheel Geometry — Geometry's pilot lands first, Concept's protocol freezes after, pre-registration in Flywheel Ideas at protocol freeze.
 
 ---
 
 ## Evidence
 
-The programme stands on one piece of preserved evidence at [`evidence/cheap-probe-360/`](./evidence/cheap-probe-360/): the 360-call adversarial sweep on @slashreboot's introspective coordinate elicitation probe (12 concepts × 6 prompt variants × 5 runs, against `claude-sonnet-4-6`, 2026-05-08). Pre-registered Spearman rank-correlation pass criterion `ρ > 0.5` between core and adversarial variants. **All four screens failed** (A: 0.078, B: 0.290, C: 0.159, E: 0.108). The pre-registered failure-signal trap (variant D, coherence-pressure framing) fired at ρ = 0.759 with 18× core's ground-truth pair separation. Two load-bearing assumptions in [Flywheel Ideas](https://github.com/velvetmonkey/flywheel-ideas) refuted: `asm-HvE9muhM` and `asm-VotY4n8g`, both parented to idea `idea-b4ZeRCoa`.
+The programme stands on one piece of preserved evidence at [`evidence/cheap-probe-360/`](./evidence/cheap-probe-360/): the 360-call adversarial sweep on @slashreboot's introspective coordinate elicitation probe (12 concepts × 6 prompt variants × 5 runs, against `claude-sonnet-4-6`, 2026-05-08). Pre-registered Spearman rank-correlation pass criterion `ρ > 0.5` between core and adversarial variants. **All four screens failed** (A: 0.078, B: 0.290, C: 0.159, E: 0.108). The pre-registered failure-signal trap (variant D, coherence-pressure framing) fired at ρ = 0.759 with 18× core's ground-truth pair separation. Two load-bearing assumptions in Flywheel Ideas refuted: `asm-HvE9muhM` and `asm-VotY4n8g`, both parented to idea `idea-b4ZeRCoa`.
 
 The bridge claim above is the next assumption in that lineage. The chain itself is the work.
 
@@ -127,19 +123,13 @@ The cosmological reading, the Universal Semantic Coordinate System reframe, and 
 Part of the **Flywheel suite** — local-first knowledge infrastructure over a plain-markdown Obsidian vault:
 
 - [vault-core](https://github.com/velvetmonkey/vault-core) — Shared infrastructure for the Flywheel ecosystem.
-- [flywheel-memory](https://github.com/velvetmonkey/flywheel-memory) — Persistent knowledge-graph memory MCP server: semantic search, read, and write over your vault.
-- [flywheel-crank](https://github.com/velvetmonkey/flywheel-crank) — Desktop window into your vault's Flywheel MCP server.
-- [flywheel-gravity](https://github.com/velvetmonkey/flywheel-gravity) — A compressed, reality-filtered context field over a vault.
-- [flywheel-ideas](https://github.com/velvetmonkey/flywheel-ideas) — Local-first decision ledger: falsifiable bets, accepted outcomes, reusable lessons.
 - [mega-monkey](https://github.com/velvetmonkey/mega-monkey) — Telegram-native AI research cockpit over an Obsidian vault.
 - [roundtable](https://github.com/velvetmonkey/roundtable) — Local MCP server for delegating tasks to multiple AI models.
 
 Research and experiments:
 
 - **flywheel-concept** (this repo) — A falsifiable study of cross-model concept geometry.
-- [flywheel-geometry](https://github.com/velvetmonkey/flywheel-geometry) — A pre-registered study of cross-domain knowledge retrieval.
 - [flywheel-universe](https://github.com/velvetmonkey/flywheel-universe) — Lean 4 / Mathlib-verified core of the descent argument.
-- [flywheel-velvetgram](https://github.com/velvetmonkey/flywheel-velvetgram) — Local widescreen Telegram reader for long-form reading.
 
 Verified-cognition demo: [mcp-seal](https://github.com/velvetmonkey/mcp-seal) (verified MCP approval gate) and [canary](https://github.com/velvetmonkey/canary) (the seal demo host).
 
